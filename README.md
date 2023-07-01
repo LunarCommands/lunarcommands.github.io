@@ -1,54 +1,25 @@
-# Astro Starter Kit: Basics
+# Personal Portfolio Website with Blog
 
-```
-npm create astro@latest -- --template basics
-```
+This project is a personal portfolio website with an integrated blog feature. It showcases my projects, skills, and experiences, allowing visitors to learn more about me and my work.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Technologies Used
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The website is built using the following technologies:
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+- [Astro](https://astro.build/): A static site generator that enables faster website development by leveraging modern web development tools.
+- [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework that facilitates rapid UI design and development.
+- [Svelte](https://svelte.dev/): A revolutionary JavaScript framework that simplifies web development by compiling components into highly efficient and lightweight JavaScript code.
 
-## 🚀 Project Structure
+## Features
 
-Inside of your Astro project, you'll see the following folders and files:
+1. **Homepage:** The homepage provides an overview of my portfolio and introduces visitors to my work. It includes sections highlighting my skills, projects, and a brief bio.
 
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+2. **Blog:** The website includes a dedicated blog section where I regularly share articles, tutorials, and insights. Visitors can browse through the latest blog posts and access individual posts to read more.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Contact
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+For any inquiries or further information, please reach out to me via email at [f.wolski@proton.me](mailto:f.wolski@proton.me).
 
-Any static assets, like images, can be placed in the `public/` directory.
+---
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:3000`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Thank you for checking out my personal portfolio website project! I hope you find it useful and inspiring.

@@ -18,10 +18,19 @@ const { title } = Astro.props;
 		<link rel="icon" href="/favicon.png" />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="bg-gray-800">
+		<CosmosBackground client:load animated={true} />
 		<Nav client:load />
 		<Home />
 		<slot />
-		<CosmosBackground animated={true} client:load />
 	</body>
 </html>
+
+<script>
+	if (typeof window !== "undefined") {
+		// Scroll to top on page load
+		window.onload = () => {
+			window.scrollTo(0, 0);
+		};
+	}
+</script>

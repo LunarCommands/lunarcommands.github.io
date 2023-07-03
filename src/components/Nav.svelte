@@ -49,16 +49,17 @@
       </div>
 
       <div
-        class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 {showMenu
+        class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row items-center md:space-x-10 md:mt-0 {showMenu
           ? 'flex'
           : 'hidden'}"
       >
-        <a class="text-gray-100 hover:text-blue-400" href="/">Home</a>
-        <a class="text-gray-100 hover:text-blue-400" href="/blog">Blog</a>
-        <a class="text-gray-100 hover:text-blue-400" href="/contact"
+        <a class="text-gray-100 hover:text-yellow-400" href="/">Home</a>
+        <a class="text-gray-100 hover:text-yellow-400" href="/blog">Blog</a>
+        <a class="text-gray-100 hover:text-yellow-400" href="/contact"
           >Contact Me</a
         >
-        <a class="text-gray-100 hover:text-blue-400" href="/about">About Me</a>
+        <a class="text-gray-100 hover:text-yellow-400" href="/about">About Me</a
+        >
       </div>
     </nav>
   </div>

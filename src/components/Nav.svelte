@@ -1,5 +1,6 @@
 <script>
   let showMenu = false;
+  import avatar from "../assets/avatar-reduce-removebg.webp";
 
   function toggleNavbar() {
     showMenu = !showMenu;
@@ -16,7 +17,7 @@
           class="text-xl font-bold text-gray-100 md:text-2xl hover:text-blue-400"
           href="/"
           ><img
-            src={"/avatar.png"}
+            src={avatar.src}
             width="50"
             height="50"
             alt="Lunar Commands logo"

@@ -1,0 +1,49 @@
+---
+import { Icon } from "astro-icon";
+
+interface ProjectProps {
+    image: string;
+    title: string;
+    description: string;
+    websiteUrl: string;
+    icons: string[];
+}
+
+const { image, title, description, websiteUrl, icons } = Astro.props;
+---
+
+<section class="my-8">
+    <div class="w-4/5 mx-auto h-0.5 mb-12">
+        <div class="w-full h-full bg-gradient-to-r from-white to-yellow-600">
+        </div>
+    </div>
+
+    <div class="m-12 my-48 flex flex-col md:flex-row md:items-start">
+        <div class="md:w-1/2 md:pl-8 flex flex-col justify-start">
+            <h3 class="text-2xl text-center md:text-justify font-bold mb-2">
+                {title}
+            </h3>
+            <p class="mb-16">{description}</p>
+            <div class="flex flex-wrap justify-center md:justify-start">
+                {
+                    icons.map((icon: any, index: any) => (
+                        <Icon
+                            name={icon}
+                            class={`w-16 h-16 ${index === 0 ? "ml-2" : "ml-4"}`}
+                            key={index}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+        <div class="md:w-1/2 md:pl-8 flex justify-center">
+            <a href={websiteUrl} target="_blank" rel="noopener noreferrer">
+                <img
+                    src={image}
+                    alt={title}
+                    class="w-full mt-16 md:mt-0 cursor-pointer"
+                />
+            </a>
+        </div>
+    </div>
+</section>

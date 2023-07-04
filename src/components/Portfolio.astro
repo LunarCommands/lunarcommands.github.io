@@ -1,0 +1,46 @@
+---
+import janpol from "../assets/janpol-thumbnail.webp";
+import Project from "./Project.astro";
+---
+
+<section class="py-10">
+    <h2 class="text-5xl font-semibold mb-8 text-center">
+        <span>
+            <span
+                class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-500 animate-gradient"
+            >
+                Portfolio
+            </span>
+        </span>
+    </h2>
+    <div class="max-w-5xl mx-4 md:mx-auto text-white">
+        <h2 class="text-2xl font-semibold mb-48 text-center">
+            All of the websites are designed and made by
+            <span>
+                <span
+                    class="bg-clip-text text-transparent bg-gradient-to-r from-white to-yellow-500 animate-gradient"
+                >
+                    Me
+                </span>
+            </span>
+        </h2>
+
+        <div class="space-y-8">
+            <Project
+                title="Janpol"
+                image={janpol.src}
+                description="Website for the Janpol metal products company built with Astro, Svelte and Tailwindcss"
+                websiteUrl="https://janpol.netlify.app/"
+                icons={[
+                    "vscode-icons:file-type-astro",
+                    "vscode-icons:file-type-svelte",
+                    "logos:tailwindcss-icon",
+                ]}
+            >
+                <hr
+                    class="w-4/5 mx-auto bg-gradient-to-r from-white to-yellow-600 h-0.5 my-4"
+                />
+            </Project>
+        </div>
+    </div>
+</section>

@@ -1,6 +1,9 @@
 ---
-import janpol from "../assets/janpol-thumbnail.webp";
 import Project from "./Project.astro";
+
+import janpol from "../assets/janpol-thumbnail.webp";
+import lunar from "../assets/LunarCommands-thumbnail.webp";
+import ironqueen from "../assets/IronQueen-thumbnail.webp";
 ---
 
 <section class="py-10">
@@ -34,6 +37,29 @@ import Project from "./Project.astro";
                 icons={[
                     "vscode-icons:file-type-astro",
                     "vscode-icons:file-type-svelte",
+                    "logos:tailwindcss-icon",
+                ]}
+            >
+                <hr
+                    class="w-4/5 mx-auto bg-gradient-to-r from-white to-yellow-600 h-0.5 my-4"
+                />
+            </Project>
+            <Project
+                title="My first personal website"
+                image={lunar.src}
+                description="My old personal website built with Nuxt3 and Tailwindcss"
+                icons={["logos:nuxt-icon", "logos:tailwindcss-icon"]}
+            >
+                <hr
+                    class="w-4/5 mx-auto bg-gradient-to-r from-white to-yellow-600 h-0.5 my-4"
+                />
+            </Project>
+            <Project
+                title="Iron Queen"
+                image={ironqueen.src}
+                description="Ecommerce website which I'm building with Django and Tailwindcss."
+                icons={[
+                    "vscode-icons:file-type-django",
                     "logos:tailwindcss-icon",
                 ]}
             >

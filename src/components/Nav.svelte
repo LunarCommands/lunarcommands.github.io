@@ -1,5 +1,6 @@
 <script>
   let showMenu = false;
+
   import avatar from "../assets/avatar-reduce-removebg.webp";
 
   function toggleNavbar() {
@@ -26,10 +27,13 @@
         <!-- Mobile menu button -->
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <!-- svelte-ignore a11y-no-static-element-interactions -->
-        <div on:click={toggleNavbar} class="flex md:hidden">
+        <div
+          on:click={toggleNavbar}
+          class="flex md:hidden transition-transform duration-300 transform"
+        >
           <button
             type="button"
-            class="text-gray-100 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+            class="text-gray-100 hover:text-gray-400 focus:outline-none focus:text-gray-400 transition-transform duration-300 transform"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -50,16 +54,25 @@
       </div>
 
       <div
-        class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row items-center md:space-x-10 md:mt-0 {showMenu
+        class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row items-center md:space-x-10 md:mt-0 transition-all duration-300 {showMenu
           ? 'flex'
           : 'hidden'}"
       >
-        <a class="text-gray-100 hover:text-yellow-400" href="/">Home</a>
-        <a class="text-gray-100 hover:text-yellow-400" href="/blog">Blog</a>
-        <a class="text-gray-100 hover:text-yellow-400" href="/contact"
-          >Contact Me</a
+        <a
+          class="text-gray-100 hover:text-yellow-400 object-cover transition-transform duration-300 transform hover:scale-110"
+          href="/">Home</a
         >
-        <a class="text-gray-100 hover:text-yellow-400" href="/about">About Me</a
+        <a
+          class="text-gray-100 hover:text-yellow-400 object-cover transition-transform duration-300 transform hover:scale-110"
+          href="/blog">Blog</a
+        >
+        <a
+          class="text-gray-100 hover:text-yellow-400 object-cover transition-transform duration-300 transform hover:scale-110"
+          href="/contact">Contact Me</a
+        >
+        <a
+          class="text-gray-100 hover:text-yellow-400 object-cover transition-transform duration-300 transform hover:scale-110"
+          href="/about">About Me</a
         >
       </div>
     </nav>

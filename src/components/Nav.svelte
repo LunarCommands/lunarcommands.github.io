@@ -1,11 +1,24 @@
 <script>
+  import { onMount } from "svelte";
+
   let showMenu = false;
+  let navLinks;
 
   import avatar from "../assets/avatar-reduce-removebg.webp";
 
   function toggleNavbar() {
     showMenu = !showMenu;
   }
+
+  onMount(() => {
+    navLinks = document.querySelectorAll("a[href]");
+    navLinks.forEach((link) => {
+      if (link.getAttribute("href") === window.location.pathname) {
+        link.setAttribute("aria-current", "page");
+        link.classList.add("text-yellow-400");
+      }
+    });
+  });
 </script>
 
 <div>
@@ -17,7 +30,8 @@
         <a
           class="text-xl font-bold text-gray-100 md:text-2xl hover:text-blue-400"
           href="/"
-          ><img
+        >
+          <img
             src={avatar.src}
             width="50"
             height="50"
@@ -59,19 +73,19 @@
           : 'hidden'}"
       >
         <a
-          class="text-gray-100 hover:text-yellow-400 object-cover transition-transform duration-300 transform hover:scale-110"
+          class="text-gray-100 object-cover transition-transform duration-300 transform hover:scale-110"
           href="/">Home</a
         >
         <a
-          class="text-gray-100 hover:text-yellow-400 object-cover transition-transform duration-300 transform hover:scale-110"
+          class="text-gray-100 object-cover transition-transform duration-300 transform hover:scale-110"
           href="/blog">Blog</a
         >
         <a
-          class="text-gray-100 hover:text-yellow-400 object-cover transition-transform duration-300 transform hover:scale-110"
+          class="text-gray-100 object-cover transition-transform duration-300 transform hover:scale-110"
           href="/contact">Contact Me</a
         >
         <a
-          class="text-gray-100 hover:text-yellow-400 object-cover transition-transform duration-300 transform hover:scale-110"
+          class="text-gray-100 object-cover transition-transform duration-300 transform hover:scale-110"
           href="/about">About Me</a
         >
       </div>

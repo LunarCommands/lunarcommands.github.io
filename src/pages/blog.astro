@@ -9,6 +9,7 @@ const blogPosts = await getCollection("blog", ({data}) => {
 
 <MainLayout title="Blog" />
 <section>
+    <!-- TODO: Searchbar -->
     <div class="text-white">
         {blogPosts.map(post =>
         <img src={post.data.image.src} alt={post.data.image.alt}> 

@@ -1,5 +1,20 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+
+const blogPosts = await getCollection("blog", ({data}) => {
+    return !data.draft && data.date < new Date()
+});
 ---
 
 <MainLayout title="Blog" />
+<section>
+    <div class="text-white">
+        {blogPosts.map(post =>
+        <img src={post.data.image.src} alt={post.data.image.alt}> 
+        <h2>{post.data.title}</h2>
+        <p>{post.data.description}</p>
+        <a href={`/blog/${post.slug}/`}>Read post</a>
+        )}
+    </div>
+</section>

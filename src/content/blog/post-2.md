@@ -1,15 +1,16 @@
 ---
-title: "My First Blog Post"
-pubDate: 2022-06-29
-description: "This is the first post of my new Astro blog."
-author: "Lunar Commands"
+title: "My Second Blog Post"
+date: 2022-06-29
+draft: false
+description: "This is the second post of my new Astro blog."
+author: "Filip Wolski"
 image:
-  url: "https://docs.astro.build/assets/full-logo-light.png"
+  src: "https://docs.astro.build/assets/full-logo-light.png"
   alt: "The full Astro logo."
-tags: ["astro", "blogging", "tailwindcss"]
+tags: ["astro", "tailwindcss"]
 ---
 
-# My First Blog Post
+# My Second Blog Post
 
 Published on: 2022-06-29
 

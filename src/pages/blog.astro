@@ -7,7 +7,7 @@ const blogPosts = await getCollection("blog", ({data}) => {
 });
 ---
 
-<MainLayout title="Blog" />
+<MainLayout title="Blog">
 <section>
     <!-- TODO: Searchbar -->
     <div class="text-white">
@@ -19,3 +19,4 @@ const blogPosts = await getCollection("blog", ({data}) => {
         )}
     </div>
 </section>
+</MainLayout>

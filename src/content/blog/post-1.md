@@ -1,4 +1,5 @@
 ---
+layout: "../../layouts/BlogPostLayout.astro"
 title: "My First Blog Post"
 date: 2022-06-29
 draft: false

@@ -1,0 +1,36 @@
+---
+const { data, url, tagType } = Astro.props;
+import { Image } from "astro:assets";
+
+const Tag = tagType;
+
+const { title, description, date, author, image, tags } = data;
+---
+
+<section class="text-white">
+    <div>
+        <h1>{title}</h1>
+        <a href={`/blog/${url}/`} aria-hidden="true" tabindex="-1">
+            <Image
+                src={image.src}
+                alt={image.alt}
+                width="400"
+                height="250"
+                format="webp"
+                quality={80}
+            />
+        </a>
+        <div class="content">
+            <div>
+                <Tag class="h3">
+                    <a href={`/blog/${url}/`}>{title}</a>
+                </Tag>
+                <small>
+                    by {author}
+                </small>
+            </div>
+            <p>{description}</p>
+            <a href={`/blog/${url}/`} class="bg-yellow-500">Read Post</a>
+        </div>
+    </div>
+</section>

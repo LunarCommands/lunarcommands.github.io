@@ -1,5 +1,6 @@
 ---
 import CosmosBackground from "../components/CosmosBackground.svelte";
+import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.svelte";
 export interface Props {
 	title: string;
@@ -36,8 +37,9 @@ const { title } = Astro.props;
 	<body class="bg-gray-800">
 		<CosmosBackground client:load animated={true} />
 		<Nav client:load />
-
 		<slot />
+
+		<Footer />
 	</body>
 </html>
 

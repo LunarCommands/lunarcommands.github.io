@@ -1,4 +1,5 @@
 ---
+import GetInTouch from "../components/GetInTouch.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 
@@ -19,4 +20,5 @@ const blogPosts = await getCollection("blog", ({data}) => {
         )}
     </div>
 </section>
+<GetInTouch />
 </MainLayout>

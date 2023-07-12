@@ -73,19 +73,19 @@
           : 'hidden'}"
       >
         <a
-          class="text-gray-100 object-cover transition-transform duration-300 transform hover:scale-110"
+          class="text-gray-100 font-bold object-cover transition-transform duration-300 transform hover:scale-110"
           href="/">Home</a
         >
         <a
-          class="text-gray-100 object-cover transition-transform duration-300 transform hover:scale-110"
+          class="text-gray-100 font-bold object-cover transition-transform duration-300 transform hover:scale-110"
           href="/blog">Blog</a
         >
         <a
-          class="text-gray-100 object-cover transition-transform duration-300 transform hover:scale-110"
+          class="text-gray-100 font-bold object-cover transition-transform duration-300 transform hover:scale-110"
           href="/contact">Contact Me</a
         >
         <a
-          class="text-gray-100 object-cover transition-transform duration-300 transform hover:scale-110"
+          class="text-gray-100 font-bold object-cover transition-transform duration-300 transform hover:scale-110"
           href="/about">About Me</a
         >
       </div>

@@ -1,8 +1,10 @@
 ---
 const { frontmatter } = Astro.props;
 import { Image } from "astro:assets";
+import Technology from "../components/Technology.astro";
 
 const { title, description, date, author, image, tags } = frontmatter;
+console.log(tags);
 ---
 
 <section class="text-white">
@@ -25,7 +27,10 @@ const { title, description, date, author, image, tags } = frontmatter;
                 </small>
             </div>
             <p>{description}</p>
-            {tags.map((tag: string) => <p>{tag}</p>)}
+
+            <div class="items-center">
+                {tags.map((tag: any) => <Technology name={tag} size="xs" />)}
+            </div>
             <div class="content">
                 <slot />
             </div>

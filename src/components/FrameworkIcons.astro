@@ -1,74 +1,55 @@
 ---
 import { Icon } from "astro-icon";
+import Technology from "./Technology.astro";
 ---
 
-<div class="h-screen">
-  <!-- First section: Frameworks loved -->
-  <div>
-    <h2 class="text-5xl font-semibold text-white mb-8 text-center">
+<!-- First section: Frameworks loved -->
+<div>
+  <h2 class="text-5xl font-semibold text-white mb-8 text-center">
+    <span
+      >Frameworks I
       <span
-        >Frameworks I
-        <span
-          class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-500 animate-gradient"
-        >
-          Love
-        </span></span
+        class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-500 animate-gradient"
       >
-    </h2>
-    <div class="flex flex-wrap justify-center items-center">
-      <div class="w-32 h-32 m-4">
-        <Icon name="vscode-icons:file-type-django" class="animate-bounce" />
-      </div>
-      <div class="w-32 h-32 m-4">
-        <Icon name="vscode-icons:file-type-astro" class="animate-bounce" />
-      </div>
-      <div class="w-32 h-32 m-4">
-        <Icon name="logos:nuxt-icon" class="animate-bounce" />
-      </div>
-    </div>
+        Love
+      </span></span
+    >
+  </h2>
+  <div class="flex flex-wrap justify-center items-center">
+    <Technology name="django" animation="bounce" />
+    <Technology name="astro" animation="bounce" />
+    <Technology name="nuxt" animation="bounce" />
   </div>
-  <!-- Second section: All Frameworks Worked With -->
-  <div class="mt-32">
-    <h2 class="text-3xl font-semibold text-white mb-4 text-center">
-      Frameworks I've
-      <span>
-        <span
-          class="bg-clip-text text-transparent bg-gradient-to-r from-white to-yellow-500 animate-gradient"
-        >
-          Worked
-        </span>
-        With
+</div>
+<!-- Second section: All Frameworks Worked With -->
+<div class="mt-32">
+  <h2 class="text-3xl font-semibold text-white mb-4 text-center">
+    Frameworks I've
+    <span>
+      <span
+        class="bg-clip-text text-transparent bg-gradient-to-r from-white to-yellow-500 animate-gradient"
+      >
+        Worked
       </span>
-    </h2>
-    <div class="mt-32 flex flex-wrap justify-center items-center space-x-14">
-      <div class="w-24 h-24 m-4 lg:mt-24">
-        <Icon name="logos:react" class="animate-pulse" />
-      </div>
-
-      <div class="w-24 h-24 m-4 lg:mb-24">
-        <Icon name="logos:vue" class="text-yellow-500 animate-pulse" />
-      </div>
-      <div
-        class="w-24 h-24 m-4 lg:mt-24 p-2 bg-white rounded-lg flex justify-center animate-pulse"
-      >
-        <Icon name="teenyicons:nextjs-solid" />
-      </div>
-      <div class="w-24 h-24 m-4 lg:mb-24">
-        <Icon name="logos:nuxt-icon" class="animate-pulse" />
-      </div>
-
-      <div class="w-24 h-24 m-4 lg:mt-24">
-        <Icon name="vscode-icons:file-type-astro" class="animate-pulse" />
-      </div>
-      <div class="w-24 h-24 m-4 lg:mb-24">
-        <Icon name="vscode-icons:file-type-django" class="animate-pulse" />
-      </div>
-      <div class="w-24 h-24 m-4 lg:mt-24">
-        <Icon name="vscode-icons:file-type-svelte" class="animate-pulse" />
-      </div>
-    </div>
+      With
+    </span>
+  </h2>
+  <div class="mt-32 flex flex-wrap justify-center items-center space-x-14">
+    <Technology name="react" size="sm" animation="pulse" position="down" />
+    <Technology name="vue" size="sm" animation="pulse" position="up" />
+    <Technology
+      name="nextjs"
+      size="sm"
+      position="down"
+      class="bg-white rounded-lg flex p-2 animate-pulse"
+    />
+    <Technology name="nuxt" size="sm" animation="pulse" position="up" />
+    <Technology name="astro" size="sm" animation="pulse" position="down" />
+    <Technology name="django" size="sm" animation="pulse" position="up" />
+    <Technology name="svelte" size="sm" animation="pulse" position="down" />
   </div>
-  <div class="w-4/5 mx-auto h-0.5 my-12">
-    <div class="w-full h-full bg-gradient-to-r from-white to-yellow-600"></div>
-  </div>
+</div>
+
+<div class="w-4/5 mx-auto h-0.5 my-12">
+  <div class="w-full h-full bg-gradient-to-r from-white to-yellow-600"></div>
 </div>

@@ -1,0 +1,28 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    imageSrc: string;
+    imageAlt: string;
+    slug: string;
+}
+
+const { title, description, imageSrc, imageAlt, slug } = Astro.props;
+---
+
+<a href={`/blog/${slug}/`} class="block">
+    <div class="relative">
+        <div
+            class="absolute top-0 left-0 w-full h-full border-2 border-white rounded-lg p-4 transition-all hover:scale-105"
+            style="border-image: linear-gradient(to right, #fcfcfc, #ffa200) 1;"
+        >
+        </div>
+        <div
+            class="flex flex-col rounded-lg p-4 relative transform-gpu transition-transform hover:scale-105"
+        >
+            <img src={imageSrc} alt={imageAlt} class="rounded-lg mb-4" />
+            <h2 class="text-2xl font-bold mb-2">{title}</h2>
+            <p class="text-gray-200 mb-4">{description}</p>
+        </div>
+    </div>
+</a>

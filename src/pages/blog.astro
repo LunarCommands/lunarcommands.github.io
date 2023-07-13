@@ -1,24 +1,35 @@
 ---
 import GetInTouch from "../components/GetInTouch.astro";
+import PostCard from "../components/PostCard.astro";
+import Technology from "../components/Technology.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 
-const blogPosts = await getCollection("blog", ({data}) => {
-    return !data.draft && data.date < new Date()
+const blogPosts = await getCollection("blog", ({ data }) => {
+    return !data.draft && data.date < new Date();
 });
 ---
 
 <MainLayout title="Blog">
-<section>
-    <!-- TODO: Searchbar -->
-    <div class="text-white flex">
-        {blogPosts.map(post =>
-        <img src={post.data.image.src} alt={post.data.image.alt}> 
-        <h2>{post.data.title}</h2>
-        <p>{post.data.description}</p>
-        <a href={`/blog/${post.slug}/`}>Read post</a>
-        )}
-    </div>
-</section>
-<GetInTouch />
+    <section class="m-12 md:m-24 lg:m-40">
+        <!-- TODO: Searchbar -->
+        <div class="text-white">
+            <div class="flex flex-wrap -mx-4">
+                {
+                    blogPosts.map((post) => (
+                        <div class="w-full sm:w-1/2 md:w-1/3 p-4">
+                            <PostCard
+                                title={post.data.title}
+                                description={post.data.description}
+                                imageSrc={post.data.image.src}
+                                imageAlt={post.data.image.alt}
+                                slug={post.slug}
+                            />
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+    <GetInTouch />
 </MainLayout>

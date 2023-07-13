@@ -1,7 +1,8 @@
 ---
 import { Icon } from "astro-icon";
+import Technology from "./Technology.astro";
 
-interface ProjectProps {
+interface Props {
     image: string;
     title: string;
     description: string;
@@ -25,17 +26,7 @@ const { image, title, description, websiteUrl, icons } = Astro.props;
             </h3>
             <p class="mb-16">{description}</p>
             <div class="flex flex-wrap justify-center md:justify-start">
-                {
-                    icons.map((icon: any, index: any) => (
-                        <Icon
-                            name={icon}
-                            class={`object-cover transition-transform duration-300 transform hover:scale-110 w-16 h-16 ${
-                                index === 0 ? "ml-2" : "ml-4"
-                            }`}
-                            key={index}
-                        />
-                    ))
-                }
+                {icons.map((icon: any) => <Technology name={icon} size="xs" />)}
             </div>
         </div>
         <div class="md:w-1/2 md:pl-8 flex justify-center">

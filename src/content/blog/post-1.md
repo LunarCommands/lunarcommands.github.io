@@ -13,8 +13,6 @@ tags: ["astro", "tailwindcss"]
 
 # My First Blog Post
 
-Published on: 2022-06-29
-
 Welcome to my _new blog_! Here, I will share my learning journey as I build a new website.
 
 ## What I've accomplished

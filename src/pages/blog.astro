@@ -11,7 +11,7 @@ const blogPosts = await getCollection("blog", ({data}) => {
 <MainLayout title="Blog">
 <section>
     <!-- TODO: Searchbar -->
-    <div class="text-white">
+    <div class="text-white flex">
         {blogPosts.map(post =>
         <img src={post.data.image.src} alt={post.data.image.alt}> 
         <h2>{post.data.title}</h2>

@@ -6,9 +6,10 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  experimental: {
-    assets: true,
-  },
-  site: "https://lunarcommands.github.io",
-  integrations: [svelte(), tailwind(), image(), sitemap()],
+    experimental: {
+        assets: true,
+        viewTransitions: true
+    },
+    site: "https://lunarcommands.github.io",
+    integrations: [svelte(), tailwind(), image(), sitemap()],
 });

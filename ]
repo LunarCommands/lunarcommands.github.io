@@ -2,12 +2,6 @@
 import GetInTouch from "../components/GetInTouch.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import Avatar from "../assets/Wolski-Filip-reduce.webp";
-import Coding from "../assets/coding.png"
-import DJ from "../assets/dj.png"
-import Program from "../assets/program.png"
-import Vinyl from "../assets/vinyl.png"
-import Hacker from "../assets/hacker.png"
-import Basketball from "../assets/basketball.png"
 ---
 
 <MainLayout title="About">
@@ -18,7 +12,7 @@ import Basketball from "../assets/basketball.png"
       <div class="about-container">
         <!-- Programming Section -->
         <div class="bg-white rounded-lg shadow-lg p-6 flex items-start mb-6">
-          <img class="h-16 w-16 rounded-full mr-4" src={Coding.src} alt="Programming" />
+          <img class="h-16 w-16 rounded-full mr-4" src="/assets/coding.png" alt="Programming" />
           <div>
             <h2 class="text-2xl font-semibold mb-2">Programming</h2>
             <p class="text-gray-800">
@@ -31,7 +25,7 @@ import Basketball from "../assets/basketball.png"
 
         <!-- Automation Section -->
         <div class="bg-white rounded-lg shadow-lg p-6 flex items-start mb-6">
-          <img class="h-16 w-16 rounded-full mr-4" src={Program.src} alt="Automation" />
+          <img class="h-16 w-16 rounded-full mr-4" src="/img/program.png" alt="Automation" />
           <div>
             <h2 class="text-2xl font-semibold mb-2">Automation</h2>
             <p class="text-gray-800">
@@ -46,7 +40,7 @@ import Basketball from "../assets/basketball.png"
 
         <!-- Cybersecurity Section -->
         <div class="bg-white rounded-lg shadow-lg p-6 flex items-start mb-6">
-          <img class="h-16 w-16 rounded-full mr-4" src={Hacker.src} alt="Cybersecurity" />
+          <img class="h-16 w-16 rounded-full mr-4" src="/img/hacker.png" alt="Cybersecurity" />
           <div>
             <h2 class="text-2xl font-semibold mb-2">Cybersecurity</h2>
             <p class="text-gray-800">
@@ -59,7 +53,7 @@ import Basketball from "../assets/basketball.png"
 
         <!-- Music Production Section -->
         <div class="bg-white rounded-lg shadow-lg p-6 flex items-start mb-6">
-          <img class="h-16 w-16 rounded-full mr-4" src={Vinyl.src} alt="Music Production" />
+          <img class="h-16 w-16 rounded-full mr-4" src="/img/vinyl.png" alt="Music Production" />
           <div>
             <h2 class="text-2xl font-semibold mb-2">Music Production</h2>
             <p class="text-gray-800">
@@ -74,7 +68,7 @@ import Basketball from "../assets/basketball.png"
 
         <!-- DJ Section -->
         <div class="bg-white rounded-lg shadow-lg p-6 flex items-start mb-6">
-          <img class="h-16 w-16 rounded-full mr-4" src={DJ.src} alt="DJ" />
+          <img class="h-16 w-16 rounded-full mr-4" src="/img/dj.png" alt="DJ" />
           <div>
             <h2 class="text-2xl font-semibold mb-2">DJ</h2>
             <p class="text-gray-800">
@@ -88,7 +82,7 @@ import Basketball from "../assets/basketball.png"
 
         <!-- Basketball Section -->
         <div class="bg-white rounded-lg shadow-lg p-6 flex items-start mb-6">
-          <img class="h-16 w-16 rounded-full mr-4" src={Basketball.src} alt="Basketball" />
+          <img class="h-16 w-16 rounded-full mr-4" src="/img/basketball.png" alt="Basketball" />
           <div>
             <h2 class="text-2xl font-semibold mb-2">Basketball</h2>
             <p class="text-gray-800">

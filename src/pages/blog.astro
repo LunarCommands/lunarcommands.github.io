@@ -4,6 +4,7 @@ import PostCard from "../components/PostCard.astro";
 import Technology from "../components/Technology.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
+import SearchWidget from "../components/SearchWidget.astro";
 
 const blogPosts = await getCollection("blog", ({ data }) => {
     return !data.draft && data.date < new Date();
@@ -12,8 +13,8 @@ const blogPosts = await getCollection("blog", ({ data }) => {
 
 <MainLayout title="Blog">
     <section class="m-12 md:m-24 lg:m-40">
-        <!-- TODO: Searchbar -->
-        <div class="text-white">
+        <SearchWidget />
+        <div class="text-white mt-12">
             <div class="flex flex-wrap -mx-4">
                 {
                     blogPosts.map((post) => (

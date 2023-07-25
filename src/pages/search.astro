@@ -1,0 +1,198 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Search">
+  <div class="flex mt-36 justify-center m-12 md:m-24 lg:m-40">
+    <div class="mx-auto text-center">
+      <aside>
+        <div class="mb-8">
+          <div
+            class="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden"
+          >
+            <div class="grid place-items-center h-full w-12 text-gray-300">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+
+            <input
+              class="peer h-full w-full outline-none text-sm text-gray-700 pr-2"
+              type="text"
+              required
+              min="2"
+              max="24"
+              name="search"
+              id="search"
+              placeholder="Search the blog..."
+            />
+          </div>
+        </div>
+      </aside>
+      <h1 class="text-4xl font-bold mb-6">
+        <span
+          id="searchReadout"
+          class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-500 animate-gradient"
+          >Searching results:</span
+        >
+        <section aria-label="Search Results">
+          <ul class="flex flex-wrap -mx-4" id="searchResults"></ul>
+        </section>
+      </h1>
+    </div>
+  </div>
+</MainLayout>
+
+<script>
+  // imports
+  import DOMPurify from "dompurify";
+  import Fuse from "fuse.js";
+
+  let SEARCH_DATA: any;
+  let FUSE_INSTANCE: any;
+  const FUSE_OPTIONS = {
+    includeScore: true,
+    shouldSort: true,
+    threshodold: 0.6,
+    keys: [
+      {
+        name: "title",
+        weight: 1,
+      },
+      {
+        name: "description",
+        weight: 0.75,
+      },
+      {
+        name: "tags",
+        weight: 0.9,
+      },
+    ],
+  };
+
+  const SPINNER: string = `
+  <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 16 16"
+      class="my-12 mx-auto animate-spin"
+    >
+    <g fill="white"><path fill-rule="evenodd" d="M12 19a7 7 0 1 0 0-14a7 7 0 0 0 0 14Zm0 3c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10Z" clip-rule="evenodd" opacity=".2"/><path d="M12 22c5.523 0 10-4.477 10-10h-3a7 7 0 0 1-7 7v3ZM2 12C2 6.477 6.477 2 12 2v3a7 7 0 0 0-7 7H2Z"/></g></svg>
+    `;
+
+  // selectors
+  const search: any = document.querySelector("#search");
+  const searchReadout: any = document.querySelector("#searchReadout");
+  const resultsLists: any = document.querySelector("#searchResults");
+
+  // functions
+  function updateDocumentTitle(search: any) {
+    document.title = search
+      ? `Search results for "${search}"`
+      : "Search the blog";
+  }
+  function updateSearchReadout(search: any) {
+    searchReadout.textContent = search ? `Search results for "${search}"` : "";
+  }
+
+  function updateSearchPageURL(search: any) {
+    const url = new URL(window.location.href);
+    url.searchParams.set("q", search);
+    window.history.replaceState(null, "", url);
+  }
+
+  function generateSearchList(results: any) {
+    return results
+      .map((r: any) => {
+        const { title, description, image, alt, slug, date } = r.item;
+        console.log(r);
+        const dateAsDate = new Date(date);
+        return `             
+      <div class="w-full sm:w-1/2 md:w-1/3 p-4 text-white">
+        <time datetime="${dateAsDate.toISOString()}">
+        ${dateAsDate.toLocaleDateString("en-us", {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        })}
+        </time>
+                
+        <a href="/blog/${slug}/"" class="block">
+            <div class="relative">
+                <div
+                    class="absolute top-0 left-0 w-full h-full border-2 border-white rounded-lg p-4 transition-all hover:scale-105"
+                    style="border-image: linear-gradient(to right, #fcfcfc, #ffa200) 1;"
+                >
+                </div>
+                <div
+                    class="flex flex-col rounded-lg p-4 relative transform-gpu transition-transform hover:scale-105"
+                >
+                    <img src=${image} alt=${alt} class="rounded-lg mb-4" />
+                    <h2 class="text-2xl font-bold mb-2">${title}</h2>
+                    <p class="text-gray-200 mb-4">${description}</p>
+                </div>
+            </div>
+        </a>
+      </div>`;
+      })
+      .join("");
+  }
+
+  async function fetchSearchResults(search: any) {
+    if (search.length === 0) return;
+    resultsLists.innerHTML = SPINNER;
+    if (!SEARCH_DATA) {
+      try {
+        const res = await fetch("/search.json");
+        if (!res.ok) {
+          throw new Error("Something went wrong... Please try again");
+        }
+        const data = await res.json();
+        SEARCH_DATA = data;
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    if (SEARCH_DATA && !FUSE_INSTANCE) {
+      FUSE_INSTANCE = new Fuse(SEARCH_DATA, FUSE_OPTIONS);
+    }
+    if (!FUSE_INSTANCE) return;
+    const searchResult = FUSE_INSTANCE.search(search);
+    resultsLists.innerHTML =
+      searchResult.length > 0
+        ? generateSearchList(searchResult)
+        : "No results found...";
+  }
+
+  // add event listeners
+  window.addEventListener("DOMContentLoaded", () => {
+    const urlParams: any = DOMPurify.sanitize(
+      new URLSearchParams(window.location.search).get("q")
+    );
+    fetchSearchResults(urlParams);
+    updateDocumentTitle(urlParams);
+    updateSearchReadout(urlParams);
+    search.value = urlParams;
+    search.focus();
+  });
+
+  search.addEventListener("input", () => {
+    const searchTerm = DOMPurify.sanitize(search.value);
+    updateDocumentTitle(searchTerm);
+    updateSearchReadout(searchTerm);
+    fetchSearchResults(searchTerm);
+    updateSearchPageURL(searchTerm);
+  });
+</script>

@@ -6,14 +6,14 @@ const blog = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    date: z.date(),
+    pubDate: z.date(),
     draft: z.boolean().default(false),
     description: z.string(),
     author: z.enum(["Filip Wolski"]),
     image: z.object({
         src: z.string(),
         alt: z.string()}),
-    tags: z.array(z.enum(["astro", "tailwindcss", "django", "nuxt3", "react", "next", "vue", "svelte"]))
+    tags: z.array(z.enum(["astro", "tailwindcss", "django", "nuxt", "react", "next", "vue", "svelte"]))
   }),
 });
 

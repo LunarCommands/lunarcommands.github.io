@@ -3,17 +3,17 @@ import { CollectionEntry, getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
 import GetInTouch from "../../components/GetInTouch.astro";
 export async function getStaticPaths() {
-    const blogPosts = await getCollection("blog", ({ data }) => {
-        return !data.draft && data.date < new Date();
-    });
-    return blogPosts.map((post) => ({
-        params: { slug: post.slug },
-        props: { post },
-    }));
+  const blogPosts = await getCollection("blog", ({ data }) => {
+    return !data.draft && data.pubDate < new Date();
+  });
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
 }
 
 interface Props {
-    post: CollectionEntry<"blog">;
+  post: CollectionEntry<"blog">;
 }
 
 const { post } = Astro.props;
@@ -21,10 +21,10 @@ const { Content } = await post.render();
 ---
 
 <MainLayout title={post.data.title}>
-    <section class="text-white">
-        <div>
-            <Content />
-        </div>
-    </section>
-    <GetInTouch />
+  <section class="text-white">
+    <div>
+      <Content />
+    </div>
+  </section>
+  <GetInTouch />
 </MainLayout>

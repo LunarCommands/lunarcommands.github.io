@@ -21,7 +21,7 @@
   });
 </script>
 
-<div>
+<div transition:persist>
   <div>
     <nav
       class="container px-6 py-8 mx-auto md:flex md:justify-between md:items-center"
@@ -63,7 +63,7 @@
                 d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
               />
             </svg>
-         </button>
+          </button>
         </div>
       </div>
 

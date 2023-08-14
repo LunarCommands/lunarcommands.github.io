@@ -96,11 +96,12 @@ import MainLayout from "../layouts/MainLayout.astro";
   // functions
   function updateDocumentTitle(search: any) {
     document.title = search
-      ? `Search results for "${search}"`
-      : "Search the blog";
+      ? `Search results for “${search}”`
+      : "Search the Blog";
   }
+
   function updateSearchReadout(search: any) {
-    searchReadout.textContent = search ? `Search results for "${search}"` : "";
+    searchReadout.textContent = search ? `Search results for “${search}”` : "";
   }
 
   function updateSearchPageURL(search: any) {
@@ -167,7 +168,7 @@ import MainLayout from "../layouts/MainLayout.astro";
         : "No results found…";
   }
 
-  // add event listeners
+  // event listeners
   window.addEventListener("DOMContentLoaded", () => {
     const urlParams = DOMPurify.sanitize(
       new URLSearchParams(window.location.search).get("q")

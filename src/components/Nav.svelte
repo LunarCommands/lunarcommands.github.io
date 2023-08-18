@@ -47,6 +47,7 @@
         >
           <button
             type="button"
+            aria-label="hamburger-menu"
             class="text-gray-100 hover:text-gray-400 focus:outline-none focus:text-gray-400 transition-transform duration-300 transform"
           >
             <svg

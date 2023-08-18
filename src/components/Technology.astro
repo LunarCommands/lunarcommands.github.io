@@ -1,65 +1,65 @@
 ---
 import { Icon } from "astro-icon";
-import type About from "../pages/about.astro";
 
 interface Props {
-    name:
-        | "astro"
-        | "tailwindcss"
-        | "django"
-        | "react"
-        | "nuxt"
-        | "nextjs"
-        | "vue"
-        | "svelte";
-    animation?: "bounce" | "pulse" | "none";
-    size?: "xs" | "sm" | "md" | "lg";
-    position?: "up" | "down" | "normal";
+  name:
+    | "astro"
+    | "tailwindcss"
+    | "django"
+    | "react"
+    | "nuxt"
+    | "nextjs"
+    | "vue"
+    | "svelte";
+  animation?: "bounce" | "pulse" | "none";
+  size?: "xs" | "sm" | "md" | "lg";
+  position?: "up" | "down" | "normal";
+  class?: "bg-white rounded-lg flex p-2 animate-pulse";
 }
 
 const {
-    name,
-    animation = "none",
-    size = "md",
-    position = "normal",
-    ...rest
+  name,
+  animation = "none",
+  size = "md",
+  position = "normal",
+  ...rest
 } = Astro.props;
 
 const sizeClasses = {
-    xs: "w-16 h-16",
-    sm: "w-24 h-24",
-    md: "w-32 h-32",
-    lg: "w-48 h-48",
+  xs: "w-16 h-16",
+  sm: "w-24 h-24",
+  md: "w-32 h-32",
+  lg: "w-48 h-48",
 };
 
 const positionClasses = {
-    up: "mb-24",
-    down: "mt-24",
-    normal: "",
+  up: "mb-24",
+  down: "mt-24",
+  normal: "",
 };
 
 const nameClasses = {
-    astro: "vscode-icons:file-type-astro",
-    tailwindcss: "logos:tailwindcss-icon",
-    django: "vscode-icons:file-type-django",
-    react: "logos:react",
-    nuxt: "logos:nuxt-icon",
-    nextjs: "teenyicons:nextjs-solid",
-    vue: "logos:vue",
-    svelte: "vscode-icons:file-type-svelte",
+  astro: "vscode-icons:file-type-astro",
+  tailwindcss: "logos:tailwindcss-icon",
+  django: "vscode-icons:file-type-django",
+  react: "logos:react",
+  nuxt: "logos:nuxt-icon",
+  nextjs: "teenyicons:nextjs-solid",
+  vue: "logos:vue",
+  svelte: "vscode-icons:file-type-svelte",
 };
 ---
 
 <div class={`flex flex-col`}>
-    <div
-        class={`flex items-center justify-center object-cover transition-transform duration-300 transform hover:scale-110 ${sizeClasses[size]} m-4 md:${positionClasses[position]}`}
-    >
-        <Icon
-            name={nameClasses[name]}
-            class={`${animation === "bounce" ? "animate-bounce" : ""} ${
-                animation === "pulse" ? "animate-pulse" : ""
-            }`}
-            {...rest}
-        />
-    </div>
+  <div
+    class={`flex items-center justify-center object-cover transition-transform duration-300 transform hover:scale-110 ${sizeClasses[size]} m-4 md:${positionClasses[position]}`}
+  >
+    <Icon
+      name={nameClasses[name]}
+      class={`${animation === "bounce" ? "animate-bounce" : ""} ${
+        animation === "pulse" ? "animate-pulse" : ""
+      }`}
+      {...rest}
+    />
+  </div>
 </div>

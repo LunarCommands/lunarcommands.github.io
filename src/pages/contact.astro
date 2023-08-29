@@ -1,36 +1,35 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
+import MainLayout from '../layouts/MainLayout.astro'
 ---
 
 <MainLayout title="Contact">
-    <div class="flex items-center justify-center min-h-screen">
-        <div class="max-w-md mx-auto text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                <span
-                    class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-500 animate-gradient"
-                    >Contact Me</span
-                >
-            </h1>
-            <p class="text-lg md:text-xl mb-8 text-white">
-                Feel free to reach out to discuss your project or ask any
-                questions.
-            </p>
-            <div
-                class="bg-white rounded-lg shadow-md py-6 px-8 md:py-8 md:px-12"
-            >
-                <div class="mb-4">
-                    <p class="text-xl font-bold mb-2">Name</p>
-                    <p class="text-gray-600">Filip Wolski</p>
-                </div>
-                <div class="mb-4">
-                    <p class="text-xl font-bold mb-2">Email</p>
-                    <p class="text-gray-600">f.wolski@proton.me</p>
-                </div>
-                <div class="mb-4">
-                    <p class="text-xl font-bold mb-2">Phone</p>
-                    <p class="text-gray-600">+48 791 277 948</p>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="flex min-h-screen items-center justify-center">
+		<div class="mx-auto max-w-md text-center">
+			<h1 class="mb-6 text-4xl font-bold md:text-6xl">
+				<span
+					class="animate-gradient bg-gradient-to-r from-yellow-200 to-yellow-500 bg-clip-text text-transparent"
+					>Contact Me</span
+				>
+			</h1>
+			<p class="mb-8 text-lg text-white md:text-xl">
+				Feel free to reach out to discuss your project or ask any questions.
+			</p>
+			<div class="rounded-lg bg-white px-8 py-6 shadow-md md:px-12 md:py-8">
+				<div class="mb-4">
+					<p class="mb-2 text-xl font-bold">Name</p>
+					<p class="text-gray-600">Filip Wolski</p>
+				</div>
+				<div class="mb-4">
+					<p class="mb-2 text-xl font-bold">Email</p>
+					<p class="text-gray-600">f.wolski@proton.me</p>
+				</div>
+				<div class="mb-4">
+					<p class="mb-2 text-xl font-bold">Phone</p>
+					<p class="text-gray-600">+48 791 277 948</p>
+					<br />
+					<p class="text-gray-600">+34 621 160 074</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </MainLayout>

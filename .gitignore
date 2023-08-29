@@ -4,6 +4,9 @@ dist/
 # generated types
 .astro/
 
+# prettier config
+.prettierrc
+
 # dependencies
 node_modules/
 

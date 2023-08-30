@@ -1,41 +1,44 @@
 ---
-import { Icon } from "astro-icon";
-import Technology from "./Technology.astro";
+import Technology from './Technology.astro'
 
 interface Props {
-  image: string;
-  title: string;
-  description: string;
-  websiteUrl: string;
-  icons: string[];
+	image: string
+	imageHeight: number
+	imageWidth: number
+	title: string
+	description: string
+	websiteUrl: string
+	icons: string[]
 }
 
-const { image, title, description, websiteUrl, icons } = Astro.props;
+const { image, imageWidth, imageHeight, title, description, websiteUrl, icons } = Astro.props
 ---
 
 <section class="my-8">
-  <div class="w-4/5 mx-auto h-0.5 mb-12">
-    <div class="w-full h-full bg-gradient-to-r from-white to-yellow-600"></div>
-  </div>
+	<div class="mx-auto mb-12 h-0.5 w-4/5">
+		<div class="h-full w-full bg-gradient-to-r from-white to-yellow-600"></div>
+	</div>
 
-  <div class="m-12 my-48 flex flex-col md:flex-row md:items-start">
-    <div class="md:w-1/2 md:pl-8 flex flex-col justify-start">
-      <h3 class="text-2xl text-center md:text-justify font-bold mb-2">
-        {title}
-      </h3>
-      <p class="mb-16">{description}</p>
-      <div class="flex flex-wrap justify-center md:justify-start">
-        {icons.map((icon: any) => <Technology name={icon} size="xs" />)}
-      </div>
-    </div>
-    <div class="md:w-1/2 md:pl-8 flex justify-center">
-      <a href={websiteUrl} target="_blank" rel="noopener noreferrer">
-        <img
-          src={image}
-          alt={title}
-          class="w-full mt-16 md:mt-0 object-cover transition-transform duration-300 transform hover:scale-110"
-        />
-      </a>
-    </div>
-  </div>
+	<div class="m-12 my-48 flex flex-col md:flex-row md:items-start">
+		<div class="flex flex-col justify-start md:w-1/2 md:pl-8">
+			<h3 class="mb-2 text-center text-2xl font-bold md:text-justify">
+				{title}
+			</h3>
+			<p class="mb-16">{description}</p>
+			<div class="flex flex-wrap justify-center md:justify-start">
+				{icons.map((icon: any) => <Technology name={icon} size="xs" />)}
+			</div>
+		</div>
+		<div class="flex justify-center md:w-1/2 md:pl-8">
+			<a href={websiteUrl} target="_blank" rel="noopener noreferrer">
+				<img
+					src={image}
+					width={imageWidth}
+					height={imageHeight}
+					alt={title}
+					class="mt-16 w-full transform object-cover transition-transform duration-300 hover:scale-110 md:mt-0"
+				/>
+			</a>
+		</div>
+	</div>
 </section>

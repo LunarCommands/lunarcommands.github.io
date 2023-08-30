@@ -1,24 +1,26 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import moon404 from "../assets/moon-not-found.webp";
+import MainLayout from '../layouts/MainLayout.astro'
+import moon404 from '../assets/moon-not-found.webp'
 ---
 
 <MainLayout title="Moon Not Found">
-    <section>
-        <div class="text-white mb-24">
-            <img
-                src={moon404.src}
-                alt="Moon not found"
-                class="w-[600px] mx-auto m-12 rounded"
-            />
-            <h1
-                class="text-center text-3xl bg-clip-text text-transparent bg-gradient-to-r from-yellow-100 to-yellow-800"
-            >
-                Moon Not Found
-            </h1>
-            <h1 class="text-center text-3xl text-yellow-100">
-                <a href="/"> Go Back</a>
-            </h1>
-        </div>
-    </section>
+	<section>
+		<div class="mb-24 text-white">
+			<img
+				src={moon404.src}
+				width={moon404.width}
+				height={moon404.height}
+				alt="Moon not found"
+				class="m-12 mx-auto w-[600px] rounded"
+			/>
+			<h1
+				class="bg-gradient-to-r from-yellow-100 to-yellow-800 bg-clip-text text-center text-3xl text-transparent"
+			>
+				Moon Not Found
+			</h1>
+			<h1 class="text-center text-3xl text-yellow-100">
+				<a href="/"> Go Back</a>
+			</h1>
+		</div>
+	</section>
 </MainLayout>

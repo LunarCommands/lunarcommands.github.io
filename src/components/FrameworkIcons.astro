@@ -1,56 +1,55 @@
 ---
-import Technology from "./Technology.astro";
+import Technology from './Technology.astro'
 ---
 
 <!-- First section: Frameworks loved -->
 <div>
-  <h2 class="text-5xl font-semibold text-white mb-8 text-center">
-    <span
-      >Frameworks I
-      <span
-        class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-500 animate-gradient"
-      >
-        Love
-      </span>
-      <div class="flex flex-wrap justify-center items-center">
-        <Technology name="django" animation="bounce" />
-        <Technology name="astro" animation="bounce" />
-        <Technology name="nuxt" animation="bounce" />
-      </div>
-    </span>
-    <!-- Second section: All Frameworks Worked With -->
-    <div class="mt-32">
-      <h2 class="font-semibold
-       text-white mb-4 text-center ">
-        Frameworks I've
-        <span>
-          <span
-            class="bg-clip-text text-transparent bg-gradient-to-r from-white to-yellow-500 animate-gradient"
-          >
-            Worked
-          </span>
-          With
-        </span>
-      </h2>
-      <div class="mt-32 flex flex-wrap justify-center items-center space-x-14">
-        <Technology name="react" size="sm" animation="pulse" position="down" />
-        <Technology name="vue" size="sm" animation="pulse" position="up" />
-        <Technology
-          name="nextjs"
-          size="sm"
-          position="down"
-          class="bg-white rounded-lg flex p-2 animate-pulse"
-        />
-        <Technology name="nuxt" size="sm" animation="pulse" position="up" />
-        <Technology name="astro" size="sm" animation="pulse" position="down" />
-        <Technology name="django" size="sm" animation="pulse" position="up" />
-        <Technology name="svelte" size="sm" animation="pulse" position="down" />
-      </div>
-    </div>
+	<h2 class="mb-8 text-center text-5xl font-semibold text-white">
+		<span
+			>Frameworks I
+			<span
+				class="animate-gradient bg-gradient-to-r from-yellow-200 to-yellow-500 bg-clip-text text-transparent"
+			>
+				Love
+			</span>
+			<div class="flex flex-wrap items-center justify-center">
+				<Technology name="django" animation="bounce" />
+				<Technology name="astro" animation="bounce" />
+				<Technology name="nuxt" animation="bounce" />
+			</div>
+		</span>
+		<!-- Second section: All Frameworks Worked With -->
+		<div class="mt-32">
+			<h2 class="mb-4
+       text-center font-semibold text-white">
+				Frameworks I've
+				<span>
+					<span
+						class="animate-gradient bg-gradient-to-r from-white to-yellow-500 bg-clip-text text-transparent"
+					>
+						Worked
+					</span>
+					 With
+				</span>
+			</h2>
+			<div class="mt-32 flex flex-wrap items-center justify-center space-x-14">
+				<Technology name="react" size="sm" animation="pulse" position="down" />
+				<Technology name="vue" size="sm" animation="pulse" position="up" />
+				<Technology
+					name="nextjs"
+					size="sm"
+					position="down"
+					class="flex animate-pulse rounded-lg bg-white p-2"
+				/>
+				<Technology name="nuxt" size="sm" animation="pulse" position="up" />
+				<Technology name="astro" size="sm" animation="pulse" position="down" />
+				<Technology name="django" size="sm" animation="pulse" position="up" />
+				<Technology name="svelte" size="sm" animation="pulse" position="down" />
+			</div>
+		</div>
 
-    <div class="w-4/5 mx-auto h-0.5 my-12">
-      <div class="w-full h-full bg-gradient-to-r from-white to-yellow-600">
-      </div>
-    </div>
-  </h2>
+		<div class="mx-auto my-12 h-0.5 w-4/5">
+			<div class="h-full w-full bg-gradient-to-r from-white to-yellow-600"></div>
+		</div>
+	</h2>
 </div>

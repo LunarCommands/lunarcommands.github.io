@@ -1,38 +1,39 @@
 ---
-import GetInTouch from "../components/GetInTouch.astro";
-import PostCard from "../components/PostCard.astro";
-import Technology from "../components/Technology.astro";
-import MainLayout from "../layouts/MainLayout.astro";
-import { getCollection } from "astro:content";
-import SearchWidget from "../components/SearchWidget.astro";
-import FormattedDate from "../components/FormattedDate.astro";
+import GetInTouch from '../components/GetInTouch.astro'
+import PostCard from '../components/PostCard.astro'
+import MainLayout from '../layouts/MainLayout.astro'
+import { getCollection } from 'astro:content'
+import SearchWidget from '../components/SearchWidget.astro'
+import FormattedDate from '../components/FormattedDate.astro'
 
-const blogPosts = await getCollection("blog", ({ data }) => {
-  return !data.draft && data.pubDate < new Date();
-});
+const blogPosts = await getCollection('blog', ({ data }) => {
+	return !data.draft && data.pubDate < new Date()
+})
 ---
 
 <MainLayout title="Blog">
-  <section class="m-12 md:m-24 lg:m-40">
-    <SearchWidget />
-    <div class="text-white mt-12">
-      <div class="flex flex-wrap -mx-4">
-        {
-          blogPosts.map((post) => (
-            <div class="w-full sm:w-1/2 md:w-1/3 p-4">
-              <FormattedDate date={post.data.pubDate} />
-              <PostCard
-                title={post.data.title}
-                description={post.data.description}
-                imageSrc={post.data.image.src}
-                imageAlt={post.data.image.alt}
-                slug={post.slug}
-              />
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-  <GetInTouch />
+	<section class="m-12 md:m-24 lg:m-40">
+		<SearchWidget />
+		<div class="mt-12 text-white">
+			<div class="-mx-4 flex flex-wrap">
+				{
+					blogPosts.map((post) => (
+						<div class="w-full p-4 sm:w-1/2 md:w-1/3">
+							<FormattedDate date={post.data.pubDate} />
+							<PostCard
+								title={post.data.title}
+								description={post.data.description}
+								imageSrc={post.data.image.src}
+								imageWidth={post.data.image.width}
+								imageHeight={post.data.image.height}
+								imageAlt={post.data.image.alt}
+								slug={post.slug}
+							/>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+	<GetInTouch />
 </MainLayout>

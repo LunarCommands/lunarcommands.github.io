@@ -1,67 +1,67 @@
 ---
-import Project from "./Project.astro";
+import Project from './Project.astro'
 
-import janpol from "../assets/janpol-thumbnail.webp";
-import lunar from "../assets/LunarCommands-thumbnail.webp";
-import ironqueen from "../assets/IronQueen-thumbnail.webp";
+import janpol from '../assets/janpol-thumbnail.webp'
+import lunar from '../assets/LunarCommands-thumbnail.webp'
+import ironqueen from '../assets/IronQueen-thumbnail.webp'
 ---
 
-<section class="md:my-10 mt-80">
-  <h2 class="text-5xl font-semibold mb-8 text-center">
-    <span>
-      <span
-        class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-500 animate-gradient"
-      >
-        Portfolio
-      </span>
-    </span>
-  </h2>
-  <div class="max-w-5xl mx-4 md:mx-auto text-white">
-    <h2 class="text-2xl font-semibold mb-48 text-center">
-      All of the websites are designed and made by
-      <span>
-        <span
-          class="bg-clip-text text-transparent bg-gradient-to-r from-white to-yellow-500 animate-gradient"
-        >
-          Me
-        </span>
-      </span>
-    </h2>
+<section class="mt-80 md:my-10">
+	<h2 class="mb-8 text-center text-5xl font-semibold">
+		<span>
+			<span
+				class="animate-gradient bg-gradient-to-r from-yellow-200 to-yellow-500 bg-clip-text text-transparent"
+			>
+				Portfolio
+			</span>
+		</span>
+	</h2>
+	<div class="mx-4 max-w-5xl text-white md:mx-auto">
+		<h2 class="mb-48 text-center text-2xl font-semibold">
+			All of the websites are designed and made by
+			<span>
+				<span
+					class="animate-gradient bg-gradient-to-r from-white to-yellow-500 bg-clip-text text-transparent"
+				>
+					Me
+				</span>
+			</span>
+		</h2>
 
-    <div class="space-y-8">
-      <Project
-        title="Janpol"
-        image={janpol.src}
-        description="Website for the Janpol metal products company built with Astro, Svelte and Tailwindcss"
-        websiteUrl="https://janpol.netlify.app/"
-        icons={["astro", "svelte", "tailwindcss"]}
-      >
-        <hr
-          class="w-4/5 mx-auto bg-gradient-to-r from-white to-yellow-600 h-0.5 my-4"
-        />
-      </Project>
-      <Project
-        title="My first personal website"
-        image={lunar.src}
-        description="My old personal website built with Nuxt3 and Tailwindcss"
-        icons={["nuxt", "tailwindcss"]}
-        websiteUrl="https://github.com/LunarCommands"
-      >
-        <hr
-          class="w-4/5 mx-auto bg-gradient-to-r from-white to-yellow-600 h-0.5 my-4"
-        />
-      </Project>
-      <Project
-        title="Iron Queen"
-        image={ironqueen.src}
-        description="Ecommerce website which I'm building with Django and Tailwindcss."
-        icons={["django", "tailwindcss"]}
-        websiteUrl="https://github.com/LunarCommands"
-      >
-        <hr
-          class="w-4/5 mx-auto bg-gradient-to-r from-white to-yellow-600 h-0.5 my-4"
-        />
-      </Project>
-    </div>
-  </div>
+		<div class="space-y-8">
+			<Project
+				title="Janpol"
+				image={janpol.src}
+				imageWidth={janpol.width}
+				imageHeight={janpol.height}
+				description="Website for the Janpol metal products company built with Astro, Svelte and Tailwindcss"
+				websiteUrl="https://janpol.netlify.app/"
+				icons={['astro', 'svelte', 'tailwindcss']}
+			>
+				<hr class="mx-auto my-4 h-0.5 w-4/5 bg-gradient-to-r from-white to-yellow-600" />
+			</Project>
+			<Project
+				title="My first personal website"
+				image={lunar.src}
+				imageWidth={lunar.width}
+				imageHeight={lunar.height}
+				description="My old personal website built with Nuxt3 and Tailwindcss"
+				icons={['nuxt', 'tailwindcss']}
+				websiteUrl="https://github.com/LunarCommands"
+			>
+				<hr class="mx-auto my-4 h-0.5 w-4/5 bg-gradient-to-r from-white to-yellow-600" />
+			</Project>
+			<Project
+				title="Iron Queen"
+				image={ironqueen.src}
+				imageWidth={ironqueen.width}
+				imageHeight={ironqueen.height}
+				description="Ecommerce website which I'm building with Django and Tailwindcss."
+				icons={['django', 'tailwindcss']}
+				websiteUrl="https://github.com/LunarCommands"
+			>
+				<hr class="mx-auto my-4 h-0.5 w-4/5 bg-gradient-to-r from-white to-yellow-600" />
+			</Project>
+		</div>
+	</div>
 </section>

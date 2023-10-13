@@ -8,7 +8,7 @@ The website is built using the following technologies:
 
 - [Astro](https://astro.build/): A static site generator that enables faster website development by leveraging modern web development tools.
 - [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework that facilitates rapid UI design and development.
-- [Svelte](https://svelte.dev/): A revolutionary JavaScript framework that simplifies web development by compiling components into highly efficient and lightweight JavaScript code.
+- [Vue.js](https://vuejs.org/): A progressive JavaScript framework that simplifies web development by providing a reactive and component-based approach.
 
 ## Features
 

@@ -4,7 +4,7 @@
       <nav class="container px-6 py-8 mx-auto md:flex md:justify-between md:items-center">
         <div class="flex items-center justify-between">
           <a href="/">
-            <img src="../assets/avatar-reduce-removebg.webp" width="50" height="50" alt="Lunar Commands logo" />
+                  <img src="../assets/avatar-reduce-removebg.webp" width="50" height="50" alt="Lunar Commands logo" />
           </a>
           <div @click="toggleNavbar" class="flex md:hidden transition-transform duration-300 transform">
             <button type="button" aria-label="hamburger-menu"
